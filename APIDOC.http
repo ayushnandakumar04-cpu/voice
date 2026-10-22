@@ -1,0 +1,94 @@
+#api call for register
+###
+
+POST http://127.0.0.1:8000/voice/signup/
+Content-Type: application/json
+
+{
+    "username":"Arul",
+    "email":"ad@gmail.com",
+    "password":"ad#34"
+
+}
+#
+###
+POST http://127.0.0.1:8000/voice/token
+Content-Type: application/json
+
+{
+    "username":"Arul",
+    "password":"ad#34"
+
+}
+
+#
+###
+
+GET http://127.0.0.1:8000/voice/me/
+Accept: application/json
+Authorization: Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
+#
+###
+
+GET http://127.0.0.1:8000/voice/feedback/
+Accept: application/json
+Authorization: Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
+#
+###
+POST http://127.0.0.1:8000/voice/feedback/
+Content-Type: application/json
+Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
+{
+    "department":"ce",
+    "feedback_text":"It was poor class",
+    "sentiment":"neutral",
+    "category":"administration"
+
+}
+
+#
+###
+GET http://127.0.0.1:8000/voice/feedback/1/
+Accept: application/json
+Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
+#api call for update
+###
+
+PUT  http://127.0.0.1:8000/voice/feedback/1/
+Content-Type: application/json
+Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
+{
+    "department":"eee",
+    "feedback_text":"It was poor class",
+    "sentiment":"neutral",
+    "category":"administration"
+}
+
+#
+###
+
+DELETE http://127.0.0.1:8000/voice/feedback/4/
+Content-Type: application/json
+Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
+{
+    "id":2
+}
+
+#
+###
+GET http://127.0.0.1:8000/voice/summary/
+Accept: application/json
+Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
+#
+###
+GET http://127.0.0.1:8000/voice/ai/
+Accept: application/json
+Authorization: Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
