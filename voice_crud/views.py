@@ -8,8 +8,6 @@ from rest_framework import authentication,permissions,status
 from django.shortcuts import get_object_or_404
 from voice_crud.app_permissions import IsOwner
 from django.db.models import Count
-from voice_crud.ai_integration import analyze_feedback
-
 # Create your views here.
 
 class SignupRegisterView(APIView):
@@ -103,25 +101,4 @@ class FeedbackSummaryView(APIView):
             'category_counts': {
                 item.get('category'): item.get('total')
                 for item in category_counts}
-        })
-class FeedbackView(APIView):
-       authentication_classes = [authentication.TokenAuthentication]
-       permission_classes = [permissions.IsAuthenticated]
-
-       def get(self, request):
-
-        feedback_text = request.query_params.get("feedback_text")
-
-        if not feedback_text:
-            return Response(
-                {"error": "Please provide feedback_text"},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        result = analyze_feedback(feedback_text)
-
-        return Response({
-            "feedback_text": result["feedback_text"],
-            "sentiment": result["sentiment"],
-            "category": result["category"]
         })

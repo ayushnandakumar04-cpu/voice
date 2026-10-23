@@ -43,30 +43,28 @@ Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
 
 {
     "department":"ce",
-    "feedback_text":"It was poor class",
-    "sentiment":"neutral",
-    "category":"administration"
+    "feedback_text":"It was poor class"
+
 
 }
 
 #
 ###
-GET http://127.0.0.1:8000/voice/feedback/1/
+GET http://127.0.0.1:8000/voice/feedback/3/
 Accept: application/json
 Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
 
 #api call for update
 ###
 
-PUT  http://127.0.0.1:8000/voice/feedback/1/
+PUT  http://127.0.0.1:8000/voice/feedback/3/
 Content-Type: application/json
 Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
 
 {
     "department":"eee",
-    "feedback_text":"It was poor class",
-    "sentiment":"neutral",
-    "category":"administration"
+    "feedback_text":"It was poor class"
+    
 }
 
 #
@@ -86,9 +84,5 @@ GET http://127.0.0.1:8000/voice/summary/
 Accept: application/json
 Authorization:  Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
 
-#
-###
-GET http://127.0.0.1:8000/voice/ai/
-Accept: application/json
-Authorization: Token 8b07fb182ebcb562bbd66bac53dbd200dd0a9689
+
 
